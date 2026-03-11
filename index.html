@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KBC Quiz Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="particles" id="particles"></div>
+
+<header>
+    <div class="game-title">Kaun Banega Crorepati</div>
+    <div class="level-indicator" id="levelIndicator">
+        <span class="level-label">Level</span>
+        <span class="level-number" id="levelNumber">1</span>
+    </div>
+</header>
+
+<div class="container">
+    <div class="level-progress" id="levelProgress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <div class="question" id="question">
+        <span class="q-number">Q<span id="qNum">1</span></span>
+        <span id="questionText"></span>
+    </div>
+    
+    <div class="options" id="optionsContainer">
+        <button class="option" id="opt0"></button>
+        <button class="option" id="opt1"></button>
+        <button class="option" id="opt2"></button>
+        <button class="option" id="opt3"></button>
+    </div>
+
+    <div class="lifelines">
+        <button class="lifeline-btn" onclick="fiftyFifty()" id="fiftyFifty">
+            <span>50:50</span>
+        </button>
+        <button class="lifeline-btn" onclick="skipQuestion()" id="skipBtn">
+            <span>Skip ⏭</span>
+        </button>
+    </div>
+
+    <div class="result" id="result"></div>
+
+    <div class="money" id="moneyLadder"></div>
+</div>
+
+<div class="modal" id="levelModal">
+    <div class="modal-content">
+        <h2 id="levelTitle">Level Complete! 🎉</h2>
+        <p id="levelMessage">Get ready for the next level...</p>
+        <button class="continue-btn" onclick="continueGame()">Continue</button>
+    </div>
+</div>
+
+<div class="modal" id="gameOverModal">
+    <div class="modal-content">
+        <h2>Game Over! 😔</h2>
+        <p id="finalScore">You won: ₹0</p>
+        <button class="continue-btn" onclick="restartGame()">Play Again</button>
+    </div>
+</div>
+
+<div class="modal" id="victoryModal">
+    <div class="modal-content victory">
+        <h2>🏆 CHAMPION! 🏆</h2>
+        <p>You've conquered all levels!</p>
+        <p id="totalWinnings">Total: ₹0</p>
+        <button class="continue-btn" onclick="restartGame()">Play Again</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
